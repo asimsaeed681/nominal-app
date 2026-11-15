@@ -1,0 +1,15 @@
+# NOMINAL
+
+> Daily health self-check for astronauts on long missions. Gather, evaluate and act, fully offline. Built for NASA Space Apps 2026, "Create Health Monitoring Software for Astronauts on Space Missions", by COMSATS Orbit Crew, Islamabad.
+
+NOMINAL gathers a 2-minute check-in, a built-in reaction-time test and onboard sensor readings. It compares them with the astronaut's own baseline (mission days 1 to 14) and NASA limits, gives each of the 5 NASA hazards a status (NOMINAL, CAUTION or WARNING), and points to step-by-step onboard procedures. The astronaut and sensor history are simulated. The code was written with AI assistance (Claude) and reviewed by the team.
+
+## Screens
+
+- [Status](/#/status): the 5 NASA hazards with their status, the next actions and the daily routine
+- [Check-in](/#/checkin): sleep, mood, stress, symptoms, vital signs, exercise and a reaction test
+- [Body](/#/body): a clickable body figure with each system's NASA risk and readings
+- [Procedures](/#/procedures): onboard procedures, opened by the findings
+- [Trends](/#/trends): 8 charts against the baseline
+- [Downlink](/#/downlink): a plain-text daily report for Mission Control
+- [About](/#/about): NASA and CSA sources, data notes, privacy and AI use

@@ -1,0 +1,108 @@
+/* Written with AI assistance (Claude) and reviewed by the team. */
+@import 'tailwindcss';
+
+/* Color tokens (SPEC 4.2) */
+:root {
+  --bg: #0a0c0f;
+  --panel: #12151a;
+  --panel-2: #181c22;
+  --line: #252a31;
+  --text: #e8ecf1;
+  --text-2: #9aa3ae;
+  --text-3: #7d8692; /* SPEC 4.2 says #6b7480: lightened to pass AA (4.5:1) on bg, panel and panel-2 */
+  --nominal: #3dd68c;
+  --caution: #ffb020;
+  --warning: #ff5a4e;
+  --info: #5cc8ff;
+  --info-ink: #06212e;
+  /* text on filled status chips and the master status bar (SPEC 4.5) */
+  --caution-ink: #1a1200;
+  --warning-ink: #1f0605;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-line: var(--line);
+  --color-fg: var(--text);
+  --color-fg-2: var(--text-2);
+  --color-fg-3: var(--text-3);
+  --color-nominal: var(--nominal);
+  --color-caution: var(--caution);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-info-ink: var(--info-ink);
+  --color-caution-ink: var(--caution-ink);
+  --color-warning-ink: var(--warning-ink);
+
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius: 4px;
+}
+
+/* Type scale (SPEC 4.3): size / line-height, weight + family set in the utility */
+@utility type-display {
+  font: 500 44px/48px var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+@utility type-h1 {
+  font: 600 28px/34px var(--font-sans);
+}
+@utility type-h2 {
+  font: 600 18px/24px var(--font-sans);
+}
+@utility type-body {
+  font: 400 16px/24px var(--font-sans);
+}
+@utility type-label {
+  font: 500 13px/18px var(--font-sans);
+  color: var(--text-2);
+}
+@utility type-data {
+  font: 500 20px/26px var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+@utility type-small-mono {
+  font: 400 13px/18px var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+/* Only for the wordmark, status chip words and CAUTION/WARNING in procedures */
+@utility caps {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 400 16px/24px var(--font-sans);
+  }
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+  }
+  :focus-visible {
+    outline: 2px solid var(--info);
+    outline-offset: 2px;
+  }
+  a,
+  button {
+    transition:
+      color 150ms ease-out,
+      background-color 150ms ease-out,
+      border-color 150ms ease-out,
+      opacity 150ms ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+    }
+  }
+}
